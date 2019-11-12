@@ -1,0 +1,11 @@
+<div>
+  <label>Email:
+    <input [(ngModel)] = user.email/>
+  </label>
+</div>
+<div>
+  <label>Password:
+    <input [(ngModel)] = user.password />
+  </label>
+</div>
+<button type = 'submit' (click) = "logIn(user.email,user.password)">Send</button>
