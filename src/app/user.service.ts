@@ -1,20 +1,29 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {LOCAL_STORAGE, WebStorageService, SESSION_STORAGE} from 'angular-webstorage-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor( private http: HttpClient) { }
+  constructor(@Inject(SESSION_STORAGE) private storage: WebStorageService, private http: HttpClient) { }
 
-    loginInfo;
+    login(data) {
+      return this.http.post('http://localhost:3000/contacts/login', data)
+    }
 
-    login(email:string, password:string) {
-      this.loginInfo = this.http.post('http://localhost:3000/contacts/login', {
-        email: email,
-        password: password,
-      })
-      return this.loginInfo;
+    createUser(data){
+      return this.http.post('http://localhost:3000/contacts', data);
+    }
+
+    saveToken(token){
+      this.storage.set('token',token);
+    }
+
+    takeToken(){
+      const token = this.storage.get('token')
+      console.log(token);
+      return token;
     }
 }

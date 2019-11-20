@@ -8,18 +8,22 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+	  StorageServiceModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

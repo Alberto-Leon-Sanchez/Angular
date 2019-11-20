@@ -1,0 +1,33 @@
+<form #formulario1 = 'ngForm' (ngSubmit) = register(formulario1.form)>
+  <div>
+    <label>Name:
+      <input name = "name" ngModel required/>
+    </label>
+  </div>
+
+  <div>
+    <label>Surname:
+      <input name = "surname" ngModel required/>
+    </label>
+  </div>
+
+  <div>
+    <label>Phone:
+      <input name = "phone" ngModel required/>
+    </label>
+  </div>
+
+  <div>
+    <label>Email:
+      <input name = "email" ngModel required/>
+    </label>
+  </div>
+
+  <div>
+    <label>Password:
+      <input name = "password" type = "password" ngModel required/>
+    </label>
+  </div>
+  
+  <button type = 'submit' class="waves-effect waves-light btn">Send</button>
+</form>

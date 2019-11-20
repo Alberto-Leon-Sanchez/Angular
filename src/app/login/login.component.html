@@ -1,11 +1,13 @@
-<div>
-  <label>Email:
-    <input [(ngModel)] = user.email/>
-  </label>
-</div>
-<div>
-  <label>Password:
-    <input [(ngModel)] = user.password type = "password" />
-  </label>
-</div>
-<button type = 'submit' (click) = "logIn(user.email,user.password)">Send</button>
+<form #formulario = 'ngForm' (ngSubmit) = login(formulario.form)>
+  <div>
+    <label>Email:
+      <input name = "email" ngModel required/>
+    </label>
+  </div>
+  <div>
+    <label>Password:
+      <input name = "password" type = "password" ngModel required/>
+    </label>
+  </div>
+  <button type = 'submit' class="waves-effect waves-light btn">Send</button>
+</form>
