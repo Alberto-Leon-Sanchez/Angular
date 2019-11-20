@@ -1,2 +1,4 @@
-<p>user works!</p>
+<li *ngFor = "let book of books | async; index as i">
+  {{i}}.{{book.titulo}}. Isbn: {{book.ISBN}}
+</li>
 
