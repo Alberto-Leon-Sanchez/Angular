@@ -1,31 +1,31 @@
-<form #formulario1 = 'ngForm' (ngSubmit) = register(formulario1.form)>
+<form #formulario = 'ngForm' (ngSubmit) = register(formulario.form)>
   <div>
     <label>Name:
-      <input name = "name" ngModel required/>
+      <input name = "name" ngModel required class="formulario"/>
     </label>
   </div>
 
   <div>
     <label>Surname:
-      <input name = "surname" ngModel required/>
+      <input name = "surname" ngModel required class="formulario"/>
     </label>
   </div>
 
   <div>
     <label>Phone:
-      <input name = "phone" ngModel required/>
+      <input name = "phone" ngModel required class="formulario"/>
     </label>
   </div>
 
   <div>
     <label>Email:
-      <input name = "email" ngModel required/>
+      <input name = "email" ngModel required class="formulario"/>
     </label>
   </div>
 
   <div>
     <label>Password:
-      <input name = "password" type = "password" ngModel required/>
+      <input name = "password" type = "password" ngModel required class="formulario"/>
     </label>
   </div>
   

@@ -1,4 +1,40 @@
-<li *ngFor = "let book of books | async; index as i">
-  {{i}}.{{book.titulo}}. Isbn: {{book.ISBN}}
-</li>
-
+<div class="row">
+  <div *ngFor = "let book of books; index as i" class="col s12 m6 l4">
+      <div class="card white">
+        {{i + 1}}.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Titulo: {{book.titulo}}.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Isbn: {{book.ISBN}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editorial: {{book.editorial}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precio: {{book.precio}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Autor: {{book.autor}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha de Publicacion: {{book.fechaPublicacion}}
+      </div>
+  </div> 
+</div> 
+<form #formulario = 'ngForm'>
+  <div>
+    <label>Busqueda:
+      <input name= "data" ngModel required class="formulario"/>
+    </label>
+  </div>
+  <button type = 'button' (click)="findByEditorial(formulario.form)" class="waves-effect waves-light btn">Editorial</button>
+  <button type = 'button' (click)="findByTitulo(formulario.form)" class="waves-effect waves-light btn">Titulo</button>
+  <button type = 'button' (click)="findByISBN(formulario.form)" class="waves-effect waves-light btn">ISBN</button>
+  <button type = 'button' (click)="findByAutor(formulario.form)" class="waves-effect waves-light btn">Autor</button>
+  <button type = 'button' (click)="findByFecha(formulario.form)" class="waves-effect waves-light btn">Fecha de Publicacion</button>
+</form>
+<div *ngIf = "book1">
+  <div class="row">
+    <div *ngFor = "let book of book1; index as i" class="col s12 m6 l4">
+        <div class="card white">
+          {{i + 1}}.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Titulo: {{book.titulo}}.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Isbn: {{book.ISBN}}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editorial: {{book.editorial}}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precio: {{book.precio}}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Autor: {{book.autor}}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha de Publicacion: {{book.fechaPublicacion}}
+        </div>
+    </div> 
+  </div> 
+</div>

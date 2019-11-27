@@ -34,4 +34,25 @@ export class UserService {
     getBooks(){
       return this.http.get('http://localhost:3000/books');
     }
+    getBookByISBN(data){
+      return this.http.get(`http://localhost:3000/books/findBookByIsbn/${data}`);
+    }
+    getBookById(data){
+      return this.http.get(`http://localhost:3000/books/findBookById/${data}`);
+    }
+    getBookByPrecio(data){
+      return this.http.get(`http://localhost:3000/books/findBookByPrecio/${data}`);
+    }
+    getBookByAutor(data){
+      return this.http.get(`http://localhost:3000/books/findBookByAutor/${data}`);
+    }
+    getBookByTitulo(data){
+      return this.http.get(`http://localhost:3000/books/findBookByTitulo/${data}`);
+    }
+    getBookByEditorial(data){
+      return this.http.get(`http://localhost:3000/books/findBookByEditorial/${data}`);
+    }
+    getBookByFecha(data){
+      return this.http.get(`http://localhost:3000/books/findBookByFecha/${data}`);
+    }
 }

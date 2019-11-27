@@ -1,12 +1,12 @@
 <form #formulario = 'ngForm' (ngSubmit) = login(formulario.form)>
   <div>
     <label>Email:
-      <input name = "email" ngModel required/>
+      <input name = "email" ngModel required class="formulario"/>
     </label>
   </div>
   <div>
     <label>Password:
-      <input name = "password" type = "password" ngModel required/>
+      <input name = "password" type = "password" ngModel required class="formulario"/>
     </label>
   </div>
   <button type = 'submit' class="waves-effect waves-light btn">Send</button>
