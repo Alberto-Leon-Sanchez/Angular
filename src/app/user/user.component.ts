@@ -64,6 +64,7 @@ export class UserComponent implements OnInit {
   findByFecha(data){
     this.userService.getBookByFecha(data.value.data).subscribe( (response: Book[]) => {
       this.book1 = response;
+      console.log(response);
     },(err) =>{
       alert('No correspone ningun elemento a la busqueda');
       console.log(err);
