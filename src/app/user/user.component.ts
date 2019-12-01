@@ -88,4 +88,15 @@ export class UserComponent implements OnInit {
       console.log(err);
     });
   }
+
+  find(data){
+    console.log(data.value.data)
+    this.userService.find(data.value.data).subscribe( (response: Book[]) => {
+      console.log(response);
+      this.book1 = response;
+    }, (err) => {
+      alert('No corresponde ningun elemento a la busqueda');
+      console.log(err);
+    });
+  }
 }

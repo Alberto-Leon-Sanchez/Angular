@@ -55,4 +55,8 @@ export class UserService {
     getBookByFecha(data){
       return this.http.get(`http://localhost:3000/books/findBookByFecha/${data}`);
     }
+
+    find(data){
+      return this.http.get(`http://localhost:3000/books/find/${data}`);
+    }
 }

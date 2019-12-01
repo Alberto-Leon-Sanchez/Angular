@@ -17,11 +17,7 @@
       <input name= "data" ngModel required class="formulario"/>
     </label>
   </div>
-  <button type = 'button' (click)="findByEditorial(formulario.form)" class="waves-effect waves-light btn">Editorial</button>
-  <button type = 'button' (click)="findByTitulo(formulario.form)" class="waves-effect waves-light btn">Titulo</button>
-  <button type = 'button' (click)="findByISBN(formulario.form)" class="waves-effect waves-light btn">ISBN</button>
-  <button type = 'button' (click)="findByAutor(formulario.form)" class="waves-effect waves-light btn">Autor</button>
-  <button type = 'button' (click)="findByFecha(formulario.form)" class="waves-effect waves-light btn">Fecha de Publicacion</button>
+  <button type = 'button' (click)="find(formulario.form)" class="waves-effect waves-light btn">Find</button>
 </form>
 <div *ngIf = "book1">
   <div class="row">
